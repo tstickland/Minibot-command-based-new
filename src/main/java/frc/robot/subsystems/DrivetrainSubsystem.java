@@ -26,13 +26,13 @@ public class DrivetrainSubsystem extends SubsystemBase {
       new Talon(TalonNumbers.talonLeft2));
   */
 
-  public void ArcadeDrive(double leftSpeed, double rightSpeed) {
+  public void ArcadeDrive(double speed, double turn) {
     // leftTalons.set(leftSpeed);
     // rightTalons.set(rightSpeed);
-    leftTalon1.set(leftSpeed);
-    leftTalon2.set(leftSpeed);
-    rightTalon1.set(rightSpeed);
-    rightTalon2.set(rightSpeed);
+    leftTalon1.set(speed + turn);
+    leftTalon2.set(speed + turn);
+    rightTalon1.set(-(speed - turn));
+    rightTalon2.set(-(speed - turn));
   }
 
   //

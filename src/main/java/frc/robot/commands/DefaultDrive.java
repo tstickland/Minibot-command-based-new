@@ -19,15 +19,11 @@ public class DefaultDrive extends CommandBase {
   private double speed;
   private double turn;
 
-  /**
-   * Creates a new ExampleCommand.
-   *
-   * @param driveSub The subsystem used by this command.
-   */
   public DefaultDrive(DrivetrainSubsystem driveSub) {
     drivetrainSubsystem = driveSub;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(driveSub);
+    System.out.println("########DRIVE CREATED##########");
   }
 
   // Called when the command is initially scheduled.

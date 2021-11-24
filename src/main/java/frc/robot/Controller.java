@@ -4,10 +4,10 @@ import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.XboxController;
 
 public class Controller {
-    private static XboxController xcont = new XboxController(1);
+    private static XboxController xcont = new XboxController(0);
 
     public static double getTurn() {
-        return xcont.getX(Hand.kRight);
+        return xcont.getX(Hand.kLeft);
     }
 
     public static double getSpeed() {

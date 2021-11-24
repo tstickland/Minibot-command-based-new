@@ -5,12 +5,12 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
-import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.DefaultDrive;
 import frc.robot.subsystems.DrivetrainSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-
+import edu.wpi.first.wpilibj2.command.RunCommand;
+import frc.robot.Controller;
 /**
  * This class is where the bulk of the robot should be declared. Since
  * Command-based is a "declarative" paradigm, very little robot logic should
@@ -34,6 +34,15 @@ public class RobotContainer {
     System.out.println("#######INIT ROBOT CONTAINER######");
     configureButtonBindings();
     CommandScheduler.getInstance().schedule(driveCommand);
+    driveSubsystem.setDefaultCommand(
+      // A split-stick arcade command, with forward/backward controlled by the left
+      // hand, and turning controlled by the right.
+      new RunCommand(
+          () ->
+              driveSubsystem.ArcadeDrive(
+                  Controller.getSpeed(),
+                  Controller.getTurn()),
+          driveSubsystem));
   }
 
   /**

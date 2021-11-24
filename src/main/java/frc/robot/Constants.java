@@ -16,10 +16,10 @@ package frc.robot;
  */
 public final class Constants {
     public final static class TalonNumbers {
-        public static final int talonLeft1 = 0;
-        public static final int talonLeft2 = 1;
-        public static final int talonRight1 = 2;
-        public static final int talonRight2 = 3;
+        public static final int talonLeft1 = 2;
+        public static final int talonLeft2 = 3;
+        public static final int talonRight1 = 0;
+        public static final int talonRight2 = 1;
     }
 
 }
